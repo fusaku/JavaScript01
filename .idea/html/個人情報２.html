@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+  <style >
+    .item1 { grid-area: header; }
+    .name1 { grid-area: name1; }
+    .name2 { grid-area: name2; }
+    .name3 { grid-area: name3; }
+    .name4 { grid-area: name4; }
+
+    .sex1 { grid-area: sex1; }
+    .sex2 { grid-area: sex2; }
+    .item5 { grid-area: footer; }
+    .item6 { grid-area: footer1; }
+
+
+    .grid-container {
+      width: 610px;
+      display: grid;
+      grid:
+  'header header header header header header'
+  'name1 name2 name3 name3 sex1 sex2'
+  'name1 footer footer1 footer1 footer1 sex2'
+  'name4 name4 name4 name4 name4 name4';
+
+    }
+
+    .item1 {
+      text-align: center;
+      width: 600px;
+    }
+    .name1 {
+      text-align: right;
+      width: 100px;
+    }
+    .name2 {
+      width: 120px;
+      text-align: left;
+    }
+    .name3 {
+      text-align: right;
+      width: 220px;
+    }
+    .sex1 {
+      text-align: right;
+      width: 100px;
+    }
+    .sex2 {
+      text-align: left;
+      width: 100px;
+    }
+    .item5 {
+      width: 100px;
+    }
+    .name4 {
+      text-align: center;
+      width: 600px;
+    }
+    .button{
+      background-color: rosybrown;
+    }
+
+  </style>
+</head>
+<body>
+<form>
+<div class="grid-container">
+  <div class="item1">
+    <h1>個人情報</h1><br>
+  </div>
+
+  <div class="name1">
+    姓(漢字):&nbsp; <br><br>
+    姓カナ:&nbsp;&nbsp;&nbsp;<br><br>
+    趣味:　&nbsp;&nbsp;&nbsp;
+  </div>
+
+  <div class="name2">
+    <input type="text" style="width: 80px" name="firstname"><br><br>
+    <input type="text"style="width: 80px" name="firstname">
+  </div>
+
+
+  <div class="name3">
+    名(漢字):&nbsp;<input type="text" style="width: 80px" name="lastname">　<br><br>
+    名カナ: &nbsp;&nbsp;<input type="text" style="width: 80px" name="lastname">　
+
+  </div>
+
+  <div class="sex1">
+    　<br>
+    　<br>性别:&nbsp;
+
+  </div>
+  <div class="sex2">
+    <br><br>
+      <select name="cars">
+        <option value="fiat" selected>　　　　　</option>
+        <option value="volvo">男</option>
+        <option value="volvo">女</option>
+      </select>
+  </div>
+
+  <div class="item5">
+    <br>
+    <input type="checkbox" name="vehicle" value="Bike">サッカー
+    <input type="checkbox" name="vehicle" value="Car">ダンス　　　
+
+  </div>
+
+  <div class="item6">
+    <br>
+    　　　<input type="checkbox" name="vehicle" value="Car">フットサル　　<br>
+    　　　<input type="checkbox" name="vehicle" value="Car">旅行　　　　　　　
+    <input type="checkbox" name="vehicle" value="Car">撮影　
+
+  </div>
+
+    <div class="name4">
+      <br>
+      <br>
+      <input type="reset" class="button" value="　リセット　">　　　　　
+      <input type="submit" class="button" value="　　決定　　" />
+    </div>
+
+</div>
+
+
+</form>
+</body>
+</html>

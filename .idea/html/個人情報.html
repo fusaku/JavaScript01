@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+
+        div.kojin {
+            background-color: lightgrey;
+            width: 700px;
+            /*border: 25px !*solid green*!;*/
+            /*padding: 25px;*/
+            /*margin: 25px;*/
+        }
+        div.sei {
+            background-color: seagreen;
+
+            float:left;
+            width:300px;
+        }
+
+        div.mei {
+            background-color: rosybrown;
+
+            float: left;
+            width:200px;
+        }
+
+        div.sex {
+            background-color: red;
+
+            float: left;
+            width:200px;
+        }
+
+        div.syumi {
+            background-color: gold;
+            float: right;
+            width: 170px;
+        }
+        div.syumi01 {
+            background-color: gold;
+            float: right;
+
+            width: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<form>
+    <div class="kojin">
+        <h1>個人情報</h1>
+        <div class="sei">
+            <p>姓（漢字）: <input type="text" style="width: 80px" name="firstname"><br>
+                <br>
+                姓カナ: 　　<input type="text"style="width: 80px" name="firstname"></p>
+        </div>
+        <div class="mei">
+            <p>名（漢字）: <input type="text" style="width: 80px" name="lastname"><br>
+                <br>
+                名カナ: 　　<input type="text" style="width: 80px" name="lastname">
+            </p>
+        </div>
+
+
+        <div class="sex">
+
+            <p><br><br>性别：<form action="">
+            <select name="cars">
+                <option value="fiat" selected></option>
+                <option value="volvo">男</option>
+                <option value="volvo">女</option>
+            </select>
+            </form>
+
+        </div>
+        <div class="syumi">
+            <p>趣味：</p><br>
+        </div>
+        <div class="syumi01">
+            <input type="checkbox" name="vehicle" value="Bike">サッカー
+            <input type="checkbox" name="vehicle" value="Car">フットサル<br>
+        </div>
+        <div class="syumi02">
+            <input type="checkbox" name="vehicle" value="Car">ダンス<br>
+            <input type="checkbox" name="vehicle" value="Car">旅行
+        </div>
+        <div class="syumi03">
+            <input type="checkbox" name="vehicle" value="Car">撮影
+        </div>
+
+    </div>
+
+
+
+
+</form>
+
+
+
+</body>
+</html>
