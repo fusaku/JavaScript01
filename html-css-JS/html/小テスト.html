@@ -5,8 +5,80 @@
     <title>社員基本情報一覧画面</title>
 </head>
 <body>
+<form>
+  社員基本情報一覧画面
+  <br>
+  <hr />
 
 
+  姓名
+  <input type="text" name="name">
+  <button>社員検索</button>
+  <br>
+  <br>
 
+<table border="1">
+  <tr>
+    <th>社員番号</th>
+    <th>姓名</th>
+    <th>生年月日</th>
+    <th>国籍</th>
+    <th>性別</th>
+    <th colspan="2">操作</th>
+  </tr>
+  <tr>
+    <td>111111</td>
+    <td>山田花子</td>
+    <td>1991-01-12</td>
+    <td>日本</td>
+    <td>女性</td>
+    <td><button>削除</button></td>
+    <td><button>変更</button></td>
+  </tr>
+  <tr>
+    <td>222222</td>
+    <td>彭于晏</td>
+    <td>1991-11-24</td>
+    <td>中国</td>
+    <td>男性</td>
+    <td><button>削除</button></td>
+    <td><button>変更</button></td>
+  </tr>
+  <tr>
+    <td>3333</td>
+    <td>Damon</td>
+    <td>1992-05-16</td>
+    <td>アメリカ</td>
+    <td>不明</td>
+    <td><button>削除</button></td>
+    <td><button>変更</button></td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <td>社員番号</td>
+    <td><input type="text" name="number"></td>
+  </tr>
+  <tr>
+    <td>姓名</td>
+    <td><input type="text" name="name"></td>
+  </tr>
+  <tr>
+    <td>生年月日</td>
+    <td><input type="text" name="birthday"></td>
+  </tr>
+  <tr>
+    <td>国籍</td>
+    <td><input type="text" name="nationality"></td>
+  </tr>
+  <tr>
+    <td>性別</td>
+    <td><input type="text" name="sex"></td>
+  </tr>
+</table>
+  <button>確認</button>
+
+</form>
 </body>
 </html>
