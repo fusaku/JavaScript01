@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>社員基本情報一覧画面</title>
+</head>
+<body>
+<form>
+  社員基本情報一覧画面
+  <br>
+  <hr />
+
+
+  姓名
+  <input type="text" id="names">
+  <button>社員検索</button>
+  <br>
+  <br>
+
+<table border="1">
+  <tr>
+    <th>社員番号</th>
+    <th>姓名</th>
+    <th>生年月日</th>
+    <th>国籍</th>
+    <th>性別</th>
+    <th colspan="2">操作</th>
+  </tr>
+  <tr>
+    <td><a id="id1">111111</a></td>
+    <td><a class="name">山田花子</a></td>
+    <td><a class="birthday">1991-01-12</a></td>
+    <td><a class="nationality">日本</a></td>
+    <td><a class="gender">女性</a></td>
+    <td><button href="javascript:void(0);" onclick="de(this);">削除</button></td>
+    <td><input type="button" value="変更" onclick="tab(this)"></td>
+  </tr>
+  <tr>
+    <td>222222</td>
+    <td>彭于晏</td>
+    <td>1991-11-24</td>
+    <td>中国</td>
+    <td>男性</td>
+    <td><button href="javascript:void(0);" onclick="de(this);">削除</button></td>
+    <td><input type="button" value="変更" onclick="tab()"></td>
+  </tr>
+  <tr>
+    <td>3333</td>
+    <td>Damon</td>
+    <td>1992-05-16</td>
+    <td>アメリカ</td>
+    <td>不明</td>
+    <td><button href="javascript:void(0);" onclick="de(this);">削除</button></td>
+    <td><input type="button" value="変更" onclick="tab()"></td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <td>社員番号</td>
+    <td><input type="text" id="id"></td>
+  </tr>
+  <tr>
+    <td>姓名</td>
+    <td><input type="text" id="name"></td>
+  </tr>
+  <tr>
+    <td>生年月日</td>
+    <td><input type="text" id="birthday"></td>
+  </tr>
+  <tr>
+    <td>国籍</td>
+    <td><input type="text" id="nationality"></td>
+  </tr>
+  <tr>
+    <td>性別</td>
+    <td><input type="text" id="gender"></td>
+  </tr>
+</table>
+  <input type="button" value="確認" id="btn_add">
+  <input type="button" value="確認1" id="btn_up">
+
+  <table id="tab" border="1">
+
+  </table>
+
+</form>
+
+
+<script>
+  //# sourceURL=dynamicScript.js
+  //新規追加
+  document.getElementById("btn_add").onclick = function()
+  {
+    var id = document.getElementById("id").value;
+    var name = document.getElementById("name").value;
+    var birthday = document.getElementById("birthday").value;
+    var nationality = document.getElementById("nationality").value;
+    var gender = document.getElementById("gender").value;
+    var table = document.getElementsByTagName("table")[0];
+    table.innerHTML +="<tr>\n"+
+            "			<td>"+id+"</td>\n"+
+            "			<td>"+name+"</td>\n"+
+            "			<td>"+birthday+"</td>\n"+
+            "			<td>"+nationality+"</td>\n"+
+            "			<td>"+gender+"</td>\n"+
+            "			<td><button href=\"javascript:void(0);\" οnclick=\"de(this);\">削除</button></td>\n"+
+            "			<td><input type=\"button\" value=\"変更\" onclick=\"tab()\"></td>\n"+
+            "		</tr>";
+  }
+
+
+  function tab(btn)
+  {
+    var tr = btn.parentNode.parentNode;
+    var cell = tr.cells[0];
+    var tab = document.getElementById("tab");
+    tab.innerHTML ="<tr>\n"+
+            "<tr>"+
+            "<td>社員番号</td>"+
+            "<td><input type=\"text\" id=\"upid\"></td>"+
+            "</tr>"+
+            "<tr>"+
+            "<td>姓名</td>"+
+            "<td><input type=\"text\" id=\"upname\"></td>"+
+            "</tr>"+
+            "<td>生年月日</td>"+
+            "<td><input type=\"text\" id=\"upbirthday\"></td>"+
+            "</tr>"+
+            "<td>国籍</td>"+
+            "<td><input type=\"text\" id=\"upnationality\"></td>"+
+            "</tr>"+
+            "<td>性別</td>"+
+            "<td><input type=\"text\" id=\"upgender\"></td>"+
+            "</tr>"+
+            "<input type=\"button\" value=\"確認\" onclick=\"up()\">"+
+            "</tr>";
+  }
+
+  function up()
+  {
+    var id = document.getElementById("upid").value;
+    var name = document.getElementById("upname").value;
+    var birthday = document.getElementById("upbirthday").value;
+    var nationality = document.getElementById("upnationality").value;
+    var gender = document.getElementById("upgender").value;
+    var tr = btn.parentNode.parentNode;
+    var cell=tr.cells[1];
+
+    document.cell.innerHTML=''+ id +'';
+
+
+
+    var table = document.getElementsByTagName("table")[0];
+    table.innerHTML +="<tr>\n"+
+            "			<td>"+id+"</td>\n"+
+            "			<td>"+name+"</td>\n"+
+            "			<td>"+birthday+"</td>\n"+
+            "			<td>"+nationality+"</td>\n"+
+            "			<td>"+gender+"</td>\n"+
+            "			<td><button href=\"javascript:void(0);\" οnclick=\"de(this);\">削除</button></td>\n"+
+            "			<td><input type=\"button\" value=\"変更\" onclick=\"up()\"></td>\n"+
+            "		</tr>";
+  }
+
+
+  //削除
+  function de(x)
+  {
+    var table = x.parentNode.parentNode.parentNode;
+    var tr = x.parentNode.parentNode;
+    table.removeChild(tr);
+  }
+</script>
+
+
+</body>
+</html>
