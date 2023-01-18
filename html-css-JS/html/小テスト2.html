@@ -33,7 +33,7 @@
     <td><a class="nationality">日本</a></td>
     <td><a class="gender">女性</a></td>
     <td><button href="javascript:void(0);" onclick="de(this);">削除</button></td>
-    <td><input type="button" value="変更" onclick="tab(this)"></td>
+    <td><input type="button" value="変更" onclick="tab()"></td>
   </tr>
   <tr>
     <td>222222</td>
@@ -78,13 +78,38 @@
   </tr>
 </table>
   <input type="button" value="確認" id="btn_add">
-  <input type="button" value="確認1" id="btn_up">
-
   <table id="tab" border="1">
 
   </table>
 
 </form>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">名称</th>
+    <th style="width:40%;">城市</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+</table>
+
+
 
 
 <script>
@@ -110,10 +135,8 @@
   }
 
 
-  function tab(btn)
+  function tab()
   {
-    var tr = btn.parentNode.parentNode;
-    var cell = tr.cells[0];
     var tab = document.getElementById("tab");
     tab.innerHTML ="<tr>\n"+
             "<tr>"+
@@ -137,30 +160,29 @@
             "</tr>";
   }
 
-  function up()
+  function up(btn)
   {
     var id = document.getElementById("upid").value;
     var name = document.getElementById("upname").value;
     var birthday = document.getElementById("upbirthday").value;
     var nationality = document.getElementById("upnationality").value;
     var gender = document.getElementById("upgender").value;
-    var tr = btn.parentNode.parentNode;
-    var cell=tr.cells[1];
-
-    document.cell.innerHTML=''+ id +'';
 
 
+    document.getElementById("id1").innerHTML=''+ id +'';
 
-    var table = document.getElementsByTagName("table")[0];
-    table.innerHTML +="<tr>\n"+
-            "			<td>"+id+"</td>\n"+
-            "			<td>"+name+"</td>\n"+
-            "			<td>"+birthday+"</td>\n"+
-            "			<td>"+nationality+"</td>\n"+
-            "			<td>"+gender+"</td>\n"+
-            "			<td><button href=\"javascript:void(0);\" οnclick=\"de(this);\">削除</button></td>\n"+
-            "			<td><input type=\"button\" value=\"変更\" onclick=\"up()\"></td>\n"+
-            "		</tr>";
+
+
+    // var table = document.getElementsByTagName("table")[0];
+    // table.innerHTML +="<tr>\n"+
+    //         "			<td>"+id+"</td>\n"+
+    //         "			<td>"+name+"</td>\n"+
+    //         "			<td>"+birthday+"</td>\n"+
+    //         "			<td>"+nationality+"</td>\n"+
+    //         "			<td>"+gender+"</td>\n"+
+    //         "			<td><button href=\"javascript:void(0);\" οnclick=\"de(this);\">削除</button></td>\n"+
+    //         "			<td><input type=\"button\" value=\"変更\" onclick=\"up()\"></td>\n"+
+    //         "		</tr>";
   }
 
 

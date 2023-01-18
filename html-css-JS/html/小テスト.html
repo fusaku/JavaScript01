@@ -1,156 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>社員基本情報一覧画面</title>
+  <meta charset="UTF-8">
+  <title>社員基本情報一覧画面</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
-<form>
-  社員基本情報一覧画面
-  <br>
-  <hr />
 
+<h1 style="padding-top: 30px;padding-bottom: 15px;">社員基本情報一覧画面</h1>
 
-  姓名
-  <input type="text" id="names">
-  <button>社員検索</button>
-  <br>
-  <br>
+姓名
+<input type="text" id="myInput">
+<button onclick="myFunction()">社員検索</button><br><br>
 
-<table border="1">
-  <tr>
-    <th>社員番号</th>
-    <th>姓名</th>
-    <th>生年月日</th>
-    <th>国籍</th>
-    <th>性別</th>
-    <th colspan="2">操作</th>
-  </tr>
-  <tr>
-    <td>111111</td>
-    <td>山田花子</td>
-    <td>1991-01-12</td>
-    <td>日本</td>
-    <td>女性</td>
-    <td><button href="javascript:void(0);" onclick="de(this);">削除</button></td>
-    <td><button>変更</button></td>
-  </tr>
-  <tr>
-    <td>222222</td>
-    <td>彭于晏</td>
-    <td>1991-11-24</td>
-    <td>中国</td>
-    <td>男性</td>
-    <td><button href="javascript:void(0);" onclick="de(this);">削除</button></td>
-    <td><button>変更</button></td>
-  </tr>
-  <tr>
-    <td>3333</td>
-    <td>Damon</td>
-    <td>1992-05-16</td>
-    <td>アメリカ</td>
-    <td>不明</td>
-    <td><button href="javascript:void(0);" onclick="de(this);">削除</button></td>
-    <td><button>変更</button></td>
-  </tr>
-</table>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <div id="app">
+      <!--书籍列表部分-->
+      <table class="table table-hover" id="table" border="1">
+        <captiopn></captiopn>
+        <thead>
+        <tr>
+          <th>社員番号</th>
+          <th>姓名</th>
+          <th>生年月日</th>
+          <th>国籍</th>
+          <th>性別</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <tr>
+          <td>111111</td>
+          <td>山田花子</td>
+          <td>1991-01-12</td>
+          <td>日本</td>
+          <td>女性</td>
+          <td>
+            <button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button>
+            <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>
+            <!--            <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>-->
+          </td>
+        </tr>
+        <tr>
+          <td>222222</td>
+          <td>彭于晏</td>
+          <td>1991-11-24</td>
+          <td>中国</td>
+          <td>男性</td>
+          <td>
+            <button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button>
+            <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>
+            <!--            <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>-->
+          </td>
+        </tr>
+        <tr>
+          <td>333333</td>
+          <td>Damon</td>
+          <td>1992-05-16</td>
+          <td>アメリカ</td>
+          <td>不明</td>
+          <td>
+            <button class="btn btn-danger" type="button" class="del" onclick="delRow(this)">削除</button>
+            <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>
+            <!--            <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>-->
+          </td>
+        </tr>
 
-<table border="1">
-  <tr>
-    <td>社員番号</td>
-    <td><input type="text" id="id"></td>
-  </tr>
-  <tr>
-    <td>姓名</td>
-    <td><input type="text" id="name"></td>
-  </tr>
-  <tr>
-    <td>生年月日</td>
-    <td><input type="text" id="birthday"></td>
-  </tr>
-  <tr>
-    <td>国籍</td>
-    <td><input type="text" id="nationality"></td>
-  </tr>
-  <tr>
-    <td>性別</td>
-    <td><input type="text" id="gender"></td>
-  </tr>
-</table>
-  <input type="button" value="確認" id="btn_add">
+        </tbody>
+      </table>
 
-</form>
+      <div id="editBook" style="display:none">
+        <!--        <legend>修改书籍</legend>-->
+        <table border="1">
 
+          <tr>
+            <div class="form-group">
+              <td><label for="group1" >社員番号</label></td>
+              <td><input type="text" class="form-control" id="id1"></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <td><label for="group1">姓名</label></td>
+              <td><input type="text" class="form-control" id="group1"></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <td><label for="author1">生年月日</label></td>
+              <td><input type="text" class="form-control" id="author1"></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <td><label for="price1">国籍</label></td>
+              <td><input type="text" class="form-control" id="price1"></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <td><label for="price1">性別</label></td>
+              <td><input type="text" class="form-control" id="gender1"></td>
+            </div>
+          </tr>
+        </table>
+        <button class="btn btn-primary btn-block" onclick="complete()">確認</button>
 
+      </div>
+    </div>
+  </div>
+</div>
 <script>
-  //# sourceURL=dynamicScript.js
-  document.getElementById("btn_add").onclick = function()
-  {
-    var id = document.getElementById("id").value;
-    var name = document.getElementById("name").value;
-    var birthday = document.getElementById("birthday").value;
-    var nationality = document.getElementById("nationality").value;
-    var gender = document.getElementById("gender").value;
-
-    var td_id = document.createElement("td");
-    var text_id = document.createTextNode(id);
-    td_id.appendChild(text_id);
-
-    var td_name = document.createElement("td");
-    var text_name = document.createTextNode(name);
-    td_name.appendChild(text_name);
-
-    var td_birthday = document.createElement("td");
-    var text_birthday = document.createTextNode(birthday);
-    td_birthday.appendChild(text_birthday);
-
-    var td_nationality = document.createElement("td");
-    var text_nationality = document.createTextNode(nationality);
-    td_nationality.appendChild(text_nationality);
-
-    var td_gender = document.createElement("td");
-    var text_gender = document.createTextNode(gender);
-    td_gender.appendChild(text_gender);
-
-    var td_a = document.createElement("td");
-    var ele_a = document.createElement("button");
-
-    var td_b = document.createElement("td");
-    var ele_b = document.createElement("b");
-
-    ele_a.setAttribute("href","javascript:void(0);");
-    ele_a.setAttribute("onclick","de(this);");
-
-    ele_b.setAttribute("href","javascript:void(0);");
-    ele_b.setAttribute("onclick","de(this);");
-
-    var text_a = document.createTextNode("削除");
-    ele_a.appendChild(text_a);
-    td_a.appendChild(ele_a);
-
-    var text_b = document.createTextNode("删除2");
-    ele_b.appendChild(text_b);
-    td_b.appendChild(ele_b);
-
-    var tr = document.createElement("tr");
-    tr.appendChild(td_id);
-    tr.appendChild(td_name);
-    tr.appendChild(td_birthday);
-    tr.appendChild(td_nationality);
-    tr.appendChild(td_gender);
-    tr.appendChild(td_a);
-    tr.appendChild(td_b);
-    var table = document.getElementsByTagName("table")[0];
-    table.appendChild(tr);
+  //获取点击的那一行的行号
+  function getRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    return i;
   }
-  function de(x)
-  {
-    var table = x.parentNode.parentNode.parentNode;
-    var tr = x.parentNode.parentNode;
-    table.removeChild(tr);
+  //删除某一行
+  function delRow(r) {
+    document.getElementById('table').deleteRow(getRow(r));
+    addNumber();
+  }
+
+  //点击修改按钮，弹出修改框
+  function editRow(r) {
+    editLineNumber = getRow(r);
+    document.getElementById('editBook').style = "display: block";
+    editReset();
+    /*var arr = new Array();
+    for(var i=0; i<3; i++) {
+        arr[i] = document.getElementById('table').rows[editLineNumber].cells[i+1].innerText;
+    }
+    document.getElementById('group1').value = arr[0];
+    document.getElementById('author1').value = arr[1];
+    document.getElementById('price1').value = arr[2];*/
+  }
+  //将修改后的数据更新到列表里
+  function complete() {
+    document.getElementById('table').deleteRow(editLineNumber);//删除原来那行
+    var arr = new Array();
+    arr[0] = document.getElementById('id1').value;
+    arr[1] = document.getElementById('group1').value;
+    arr[2] = document.getElementById('author1').value;
+    arr[3] = document.getElementById('price1').value;
+    arr[4] = document.getElementById('gender1').value;
+    arr[5] = '<button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button>\n' +
+            '                        <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>\n' //+
+    // '                        <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>'
+    var x = document.getElementById('table').insertRow(editLineNumber);//添加原来那行
+    for(var i=0; i<arr.length; i++){
+      x.insertCell(i).innerHTML = arr[i];
+    }
+    addNumber();
+    document.getElementById('editBook').style = "display: none";
+  }
+  //修改框中的值为所选列表中的值
+  // function editReset() {
+  //   var arr = new Array();
+  //   for(var i=0; i<5; i++) {
+  //     arr[i] = document.getElementById('table').rows[editLineNumber].cells[i+0].innerText;
+  //   }
+  //   document.getElementById('id1').value = arr[0];
+  //   document.getElementById('group1').value = arr[1];
+  //   document.getElementById('author1').value = arr[2];
+  //   document.getElementById('price1').value = arr[3];
+  //   document.getElementById('gender1').value = arr[4];
+  // }
+  //取消添加
+  // function addCancel() {
+  //   document.getElementById('addBook').style = "display: none";
+  // }
+  // //取消编辑
+  // function editCancel() {
+  //   document.getElementById('editBook').style = "display: none";
+  // }
+
+
+  function myFunction() {
+// 声明变量
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tbody");
+    tr = table.getElementsByTagName("tr");
+
+    // 循环遍历所有列表项，并隐藏那些与搜索查询不匹配的项
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
   }
 </script>
-
-
 </body>
 </html>
