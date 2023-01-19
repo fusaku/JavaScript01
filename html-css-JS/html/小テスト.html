@@ -5,112 +5,138 @@
   <title>社員基本情報一覧画面</title>
   <link rel="stylesheet" href="bootstrap.min.css">
 </head>
+<style>
+  body
+  {
+    background-image:url('https://static.runoob.com/images/mix/paper.gif');
+    background-color:#cccccc;
+  }
+</style>
+
 <body>
-
 <h1 style="padding-top: 30px;padding-bottom: 15px;">社員基本情報一覧画面</h1>
+<hr />
+<br>
+<br>
 
-姓名
-<input type="text" id="myInput">
+<div style="margin-left: 300px">姓名
+<input style="width: 300px" type="text" id="myInput">
 <button onclick="myFunction()">社員検索</button><br><br>
+</div>
 
-<div class="container">
+<div class="container" >
   <div class="col-md-6 col-md-offset-3">
     <div id="app">
       <!--书籍列表部分-->
-      <table class="table table-hover" id="table" border="1">
-        <captiopn></captiopn>
+
+
+
+      <table  style="margin-left: 300px; " class="table table-hover" id="table" border="1" cellspacing="0">
+
         <thead>
         <tr>
-          <th>社員番号</th>
-          <th>姓名</th>
-          <th>生年月日</th>
-          <th>国籍</th>
-          <th>性別</th>
-          <th>操作</th>
+          <th style="width: 100px; height: 40px">社員番号</th>
+          <th style="width: 100px">姓名</th>
+          <th style="width: 130px">生年月日</th>
+          <th style="width: 100px">国籍</th>
+          <th style="width: 90px">性別</th>
+          <th style="width: 180px" colspan="2">操作</th>
         </tr>
         </thead>
         <tbody id="tbody">
         <tr>
-          <td>111111</td>
-          <td>山田花子</td>
+          <td style="height: 40px">111111</td>
+          <td><a href="https://www.google.com/">山田花子</a></td>
           <td>1991-01-12</td>
           <td>日本</td>
           <td>女性</td>
-          <td>
+          <td style="text-align: center">
             <button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button>
+          </td>
+          <td style="text-align: center">
             <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>
             <!--            <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>-->
           </td>
         </tr>
         <tr>
-          <td>222222</td>
-          <td>彭于晏</td>
+          <td style="height: 40px">222222</td>
+          <td><a href="https://www.google.com/">彭于晏</a></td>
           <td>1991-11-24</td>
           <td>中国</td>
           <td>男性</td>
-          <td>
+          <td style="text-align: center">
             <button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button>
+          </td>
+          <td style="text-align: center">
             <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>
             <!--            <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>-->
           </td>
         </tr>
         <tr>
           <td>333333</td>
-          <td>Damon</td>
+          <td><a href="https://www.google.com/">Damon</a></td>
           <td>1992-05-16</td>
           <td>アメリカ</td>
           <td>不明</td>
-          <td>
-            <button class="btn btn-danger" type="button" class="del" onclick="delRow(this)">削除</button>
+          <td style="text-align: center; height: 40px">
+            <button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button>
+          </td>
+          <td style="text-align: center">
             <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>
             <!--            <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>-->
           </td>
         </tr>
 
         </tbody>
+
       </table>
+
+
 
       <div id="editBook" style="display:none">
         <!--        <legend>修改书籍</legend>-->
-        <table border="1">
+        <table style="margin-left: 300px" border="1">
 
           <tr>
             <div class="form-group">
               <td><label for="group1" >社員番号</label></td>
-              <td><input type="text" class="form-control" id="id1"></td>
+              <td><input style="width: 180px" type="text" class="form-control" id="id1"></td>
             </div>
           </tr>
           <tr>
             <div class="form-group">
               <td><label for="group1">姓名</label></td>
-              <td><input type="text" class="form-control" id="group1"></td>
+              <td><input style="width: 180px" type="text" class="form-control" id="group1"></td>
             </div>
           </tr>
           <tr>
             <div class="form-group">
               <td><label for="author1">生年月日</label></td>
-              <td><input type="text" class="form-control" id="author1"></td>
+              <td><input style="width: 180px" type="text" class="form-control" id="author1"></td>
             </div>
           </tr>
           <tr>
             <div class="form-group">
               <td><label for="price1">国籍</label></td>
-              <td><input type="text" class="form-control" id="price1"></td>
+              <td><input style="width: 180px" type="text" class="form-control" id="price1"></td>
             </div>
           </tr>
           <tr>
             <div class="form-group">
               <td><label for="price1">性別</label></td>
-              <td><input type="text" class="form-control" id="gender1"></td>
+              <td><input style="width: 180px" type="text" class="form-control" id="gender1"></td>
             </div>
           </tr>
         </table>
-        <button class="btn btn-primary btn-block" onclick="complete()">確認</button>
+        <div style="margin-left: 300px">
+          <button class="btn btn-primary btn-block" onclick="complete()">確認</button>
+        </div>
 
       </div>
     </div>
   </div>
 </div>
+
 <script>
   //获取点击的那一行的行号
   function getRow(r) {
@@ -141,13 +167,16 @@
     document.getElementById('table').deleteRow(editLineNumber);//删除原来那行
     var arr = new Array();
     arr[0] = document.getElementById('id1').value;
-    arr[1] = document.getElementById('group1').value;
+    arr[1] = document.getElementById('group1').innerHTML="<a href='https://www.google.com'>"+document.getElementById('group1').value+"</a>";
     arr[2] = document.getElementById('author1').value;
     arr[3] = document.getElementById('price1').value;
     arr[4] = document.getElementById('gender1').value;
-    arr[5] = '<button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button>\n' +
-            '                        <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>\n' //+
-    // '                        <button class="btn btn-success" type="button" class="add" onclick="addRow(this)">添加</button>'
+    arr[5] = '<div style="text-align: center; height: 40px; line-height: 40px"><button class="btn btn-danger" type="button" class="del" onclick="delRow(this);">削除</button></div>';
+    arr[6] = '<div style="text-align: center"><button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button></div>';
+            //
+            // +
+            // '                        <button class="btn btn-success" type="button" class="edit" onclick="editRow(this)">変更</button>\n';
+
     var x = document.getElementById('table').insertRow(editLineNumber);//添加原来那行
     for(var i=0; i<arr.length; i++){
       x.insertCell(i).innerHTML = arr[i];
@@ -200,4 +229,5 @@
   }
 </script>
 </body>
+
 </html>
